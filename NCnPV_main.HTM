@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Credibility Analyser & Profanity Validator</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://as2.ftcdn.net/v2/jpg/06/08/67/29/1000_F_608672940_zbeaiGjhnNcChQyFILEKeMahluufPMXx.jpg');
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .navbar-brand {
+            color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        /* Ensure navbar items are displayed side by side */
+        .navbar-nav {
+            display: flex;  /* Align items horizontally */
+            margin-left: auto; /* Align items to the right */
+            padding-left: 0; /* Remove padding on the left */
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 15px; /* Space between each item */
+        }
+
+        .navbar-nav .nav-link {
+            color: #d1d1d1;
+            text-decoration: none;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #28a745;
+            transition: all 0.3s ease;
+        }
+
+        /* Header Section */
+        .header {
+            position: relative;
+            background-image: url('https://source.unsplash.com/1600x900/?technology');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+            height: 100vh;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Overlay Effect */
+        .header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+
+        .header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Cards Section */
+        .card {
+            background-color: rgba(236, 246, 202, 0.8);
+            border-radius: 10px;
+            height: 223px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #00f235;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #25154d;
+            color: white;
+            padding: 30px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #28a745;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .header p {
+                font-size: 1rem;
+                max-width: 90%;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-nav a {
+                font-size: 14px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .btn-primary {
+                padding: 12px 25px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">News Analyzer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News Analyzer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profanity Validator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.htm">Login / Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>Analyze News Credibility & Validate Profanity</h1>
+            <p>Make informed decisions by checking news reliability and validating content quality</p>
+        </div>
+    </header>
+
+    <!-- Main Content Section (News Analyzer and Profanity Validator Cards) -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <!-- News Credibility Analyzer Card -->
+            <div class="col-md-5 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">News Credibility Analyzer</h5>
+                        <p class="card-text">Use this tool to check the reliability and credibility of news articles.</p>
+                        <a href="#" class="btn btn-primary">Analyze Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profanity Validator Card -->
+            <div class="col-md-5 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Profanity Validator</h5>
+                        <p class="card-text">Check your text for offensive or inappropriate language.</p>
+                        <a href="#" class="btn btn-primary">Validate Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Created by <a href="https://yourportfolio.com" target="_blank">Your Name</a></p>
+            <p>Follow us on <a href="https://twitter.com" target="_blank">Twitter</a> & <a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
