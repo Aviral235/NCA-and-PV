@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - News Credibility Analyser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('image1.jpg'); /* Same dark background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Dark overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+        }
+
+        .navbar .btn {
+            margin-left: 10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 150px 20px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            color: #ddd;
+        }
+
+        .hero .btn {
+            margin: 15px;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 50px auto;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            margin-top: auto;
+        }
+
+        .footer a {
+            color: #28a745;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer img {
+            margin: 5px;
+            filter: brightness(0) invert(1);
+        }
+
+        .icons .fa {
+            color: #f2eae9;
+            margin: 0 13px;
+            cursor: pointer;
+            padding: 18px 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand text-white">News Credibility Analyser</div>
+        <div>
+            <a href="login.html" class="btn btn-outline-light">Login</a>
+            <a href="signup.html" class="btn btn-success">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Verify the Truth. Filter the Hate.</h1>
+        <p>Our platform helps you analyze news credibility and detect profanity in online content, ensuring a safer and more informed digital space.</p>
+        <a href="signup.html" class="btn btn-success">Get Started</a>
+        <a href="login.html" class="btn btn-outline-light">Login</a>
+    </div>
+
+    <!-- About Section -->
+    <div class="about">
+        <h2>About Our Platform</h2>
+        <p>
+            In a world filled with misinformation and toxic content, our News Credibility Analyser & Profanity Validator helps users
+            distinguish real news from fake and identify harmful language in text. Whether you're a journalist, researcher, or a general user, 
+            our tools ensure that you engage with authentic and respectful content online.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="#">Home</a> | 
+                    <a href="#">About</a> | 
+                    <a href="#">FAQ</a>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a href="mailto:support@newsanalyser.com">support@newsanalyser.com</a></p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+
+                <!-- Follow Us -->
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="icons">
+                        <i class="fa fa-brands fa-facebook"></i>
+                        <i class="fa fa-brands fa-square-x-twitter"></i>
+                        <i class="fa fa-brands fa-instagram"></i>
+                        <i class="fa fa-brands fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p>© 2025 News Credibility Analyser | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
