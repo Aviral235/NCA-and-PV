@@ -82,19 +82,64 @@
             margin-top: 30px;
         }
 
-        .news-title {
-            font-size: 18px;
+        .news-card {
+            background: #1c1c1c;
+            color: white;
+            border: 1px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .news-card-body {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .news-card-title {
+            font-size: 16px;
             font-weight: bold;
-            color: #28a745;
+            margin-bottom: 10px;
         }
 
-        .news-item {
+        .news-card p {
+            font-size: 14px;
+            color: #aaa;
+            flex-grow: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .news-card-footer {
+            text-align: center;
             padding: 10px;
-            border-bottom: 1px solid #333;
+            background: #222;
         }
 
-        .news-item:last-child {
-            border-bottom: none;
+        .news-card-footer a {
+            text-decoration: none;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Load More Button */
+        #load-more-btn {
+            display: none;
+            margin-top: 20px;;
         }
     </style>
 </head>
@@ -151,8 +196,11 @@
         <!-- Latest News Section -->
         <div class="news-block mt-5">
             <h3 class="text-center mb-3">Latest News</h3>
-            <div id="news-container">
-                <p>Loading latest news...</p>
+            <div class="row" id="news-container">
+                <p class="text-center">Loading latest news...</p>
+            </div>
+            <div class="text-center mt-3">
+                <center><button id="load-more-btn" class="btn btn-success">Load More</button></center>
             </div>
         </div>
     </div>
@@ -160,36 +208,59 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- JavaScript to Fetch & Expand News -->
     <script>
-        // Fetch latest news dynamically
+        let allArticles = [];
+        let visibleArticles = 6;
+
         async function fetchLatestNews() {
             const newsContainer = document.getElementById('news-container');
-            newsContainer.innerHTML = "<p>Fetching news...</p>";
+            newsContainer.innerHTML = "<p class='text-center'>Fetching news...</p>";
 
             try {
-                const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=YOUR_NEWSAPI_KEY');
+                const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=25d41753f3594565ba2ce59280fab14d');
                 const data = await response.json();
 
                 if (data.articles) {
+                    allArticles = data.articles;
                     newsContainer.innerHTML = '';
-                    data.articles.slice(0, 5).forEach(article => {
-                        newsContainer.innerHTML += `
-                            <div class="news-item">
-                                <p class="news-title">${article.title}</p>
-                                <p>${article.description || 'No description available'}</p>
-                                <a href="${article.url}" target="_blank" class="text-success">Read more</a>
-                            </div>
-                        `;
-                    });
+                    displayNews();
                 } else {
-                    newsContainer.innerHTML = "<p>No news available.</p>";
+                    newsContainer.innerHTML = "<p class='text-center'>No news available.</p>";
                 }
             } catch (error) {
-                newsContainer.innerHTML = "<p>Failed to fetch news.</p>";
+                newsContainer.innerHTML = "<p class='text-center'>Failed to fetch news. Please try again later.</p>";
             }
         }
 
-        // Call function on page load
+        function displayNews() {
+            const newsContainer = document.getElementById('news-container');
+            newsContainer.innerHTML = '';
+
+            allArticles.slice(0, visibleArticles).forEach(article => {
+                newsContainer.innerHTML += `
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="news-card">
+                            <img src="${article.urlToImage || 'default-news.jpg'}" alt="News Image">
+                            <div class="news-card-body">
+                                <h5 class="news-card-title">
+                                    <a href="${article.url}" target="_blank" class="text-success">${article.title}</a>
+                                </h5>
+                                <p>${article.description || 'No description available.'}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('load-more-btn').style.display = (visibleArticles >= allArticles.length) ? 'none' : 'block';
+        }
+
+        document.getElementById('load-more-btn').addEventListener('click', () => {
+            visibleArticles += 6;
+            displayNews();
+        });
+
         fetchLatestNews();
     </script>
 
