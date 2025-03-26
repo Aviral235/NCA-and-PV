@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze News - News Credibility Analyser</title>
+
+    <!-- Bootstrap & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #1c1c1c;
+            padding: 15px 20px;
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745 !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+            margin-right: 15px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #28a745;
+            transition: width 0.3s ease-in-out;
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #28a745 !important;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+            color: #28a745 !important;
+        }
+
+        .container {
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+        .result-container {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .loader {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .loader i {
+            font-size: 3rem;
+            color: #28a745;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">News Credibility Analyser</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="analyze.html">Analyze News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Analyze News Section -->
+    <div class="container">
+        <h2 class="text-center">Analyze News Credibility</h2>
+        <p class="text-center">Enter a news URL or paste the article text to check its credibility.</p>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <label for="news-url">News URL:</label>
+                    <input type="text" id="news-url" class="form-control" placeholder="Enter news article URL">
+                </div>
+                
+                <p class="text-center">OR</p>
+
+                <div class="form-group">
+                    <label for="news-text">Paste News Content:</label>
+                    <textarea id="news-text" class="form-control" rows="5" placeholder="Paste news article text"></textarea>
+                </div>
+
+                <button id="analyze-btn" class="btn btn-primary w-100 mt-3">Analyze News</button>
+
+                <!-- Animated Loader -->
+                <div class="loader">
+                    <i class="fas fa-spinner"></i>
+                    <p>Analyzing...</p>
+                </div>
+
+                <!-- Result Container -->
+                <div id="result" class="result-container" style="display: none;">
+                    <h4>Analysis Result</h4>
+                    <p id="credibility-score"></p>
+                    <p id="summary"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('analyze-btn').addEventListener('click', async () => {
+            const url = document.getElementById('news-url').value;
+            const text = document.getElementById('news-text').value;
+            const resultContainer = document.getElementById('result');
+            const loader = document.querySelector('.loader');
+            
+            resultContainer.style.display = 'none';
+            loader.style.display = 'block';
+
+            try {
+                const response = await fetch('https://your-deployed-backend-url/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url, text })
+                });
+
+                const data = await response.json();
+                loader.style.display = 'none';
+
+                if (data.success) {
+                    document.getElementById('credibility-score').textContent = `Credibility Score: ${data.score}`;
+                    document.getElementById('summary').textContent = `Summary: ${data.summary}`;
+                    resultContainer.style.display = 'block';
+                } else {
+                    alert("Error: " + data.message);
+                }
+            } catch (error) {
+                loader.style.display = 'none';
+                alert("Failed to analyze news. Please try again.");
+            }
+        });
+    </script>
+
+</body>
+</html>

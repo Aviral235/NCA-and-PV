@@ -219,9 +219,8 @@
             newsContainer.innerHTML = "<p class='text-center'>Fetching news...</p>";
 
             try {
-                const response = await fetch("https://nca-and-pv-1.onrender.com/news");
+                const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=25d41753f3594565ba2ce59280fab14d');
                 const data = await response.json();
-                console.log(data); // Check the fetched news
 
 
                 if (data.articles) {

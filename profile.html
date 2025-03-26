@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - News Credibility Analyser</title>
+
+    <!-- Bootstrap & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #1c1c1c;
+            padding: 15px 20px;
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745 !important;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s, transform 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #28a745 !important;
+            transform: scale(1.1);
+        }
+
+        .container {
+            margin-top: 40px;
+            max-width: 600px;
+        }
+
+        .profile-container {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 3px solid #28a745;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .profile-img-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: #bbb;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+        #file-upload {
+            display: none;
+        }
+
+        .progress {
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .progress-bar {
+            background-color: #28a745;
+        }
+
+        /* Password Toggle */
+        .password-wrapper {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #bbb;
+        }
+
+        .toggle-password:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="dashboard.html">News Credibility Analyser</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="analyze.html">Analyze News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profanity.html">Profanity Validator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger" href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <div class="container">
+        <div class="profile-container">
+            <!-- Profile Picture Upload -->
+            <label for="file-upload">
+                <div class="profile-img-container" onclick="document.getElementById('file-upload').click();">
+                    <img id="profile-img" src="" alt="Profile Picture" class="profile-img">
+                    <i class="fa fa-user profile-img-icon"></i>
+                </div>
+            </label>
+            <input type="file" id="file-upload" accept="image/png, image/jpeg, image/jpg, image/gif, image/webp, image/bmp, image/svg+xml">
+
+            <h3>Profile Information</h3>
+
+            <!-- Profile Completion Bar -->
+            <div class="progress mt-3">
+                <div id="profile-progress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <p id="completion-text" class="mt-2">Profile Completion: 0%</p>
+
+            <!-- Profile Form -->
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" class="form-control" placeholder="Enter full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter email">
+                </div>
+
+                <h4 class="mt-3">Change Password</h4>
+                <div class="form-group password-wrapper">
+                    <label for="current-password">Current Password:</label>
+                    <input type="password" id="current-password" class="form-control">
+                    <i class="fa fa-eye toggle-password" onclick="togglePassword('current-password')"></i>
+                </div>
+
+                <div class="form-group password-wrapper">
+                    <label for="new-password">New Password:</label>
+                    <input type="password" id="new-password" class="form-control">
+                    <i class="fa fa-eye toggle-password" onclick="togglePassword('new-password')"></i>
+                </div>
+
+                <button type="button" class="btn btn-primary w-100 mt-3" onclick="updateProfile()">Save Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-img').src = e.target.result;
+                    document.getElementById('profile-img').style.display = 'block';
+                    document.querySelector('.profile-img-icon').style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function updateProfile() {
+            const currentPassword = "12345"; // Replace with actual backend validation
+            const enteredCurrentPassword = document.getElementById("current-password").value.trim();
+            const newPassword = document.getElementById("new-password").value.trim();
+
+            if (enteredCurrentPassword !== "" && enteredCurrentPassword !== currentPassword) {
+                alert("Incorrect Current Password!");
+                return;
+            }
+
+            if (enteredCurrentPassword === currentPassword && newPassword.length < 6) {
+                alert("New Password must be at least 6 characters long!");
+                return;
+            }
+
+            if (enteredCurrentPassword === currentPassword) {
+                alert("Password Changed Successfully!");
+            }
+
+            alert("Profile Updated Successfully!");
+        }
+
+        function togglePassword(fieldId) {
+            const field = document.getElementById(fieldId);
+            field.type = field.type === "password" ? "text" : "password";
+        }
+    </script>
+
+</body>
+</html>

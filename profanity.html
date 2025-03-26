@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profanity Validator - News Credibility Analyser</title>
+
+    <!-- Bootstrap & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #1c1c1c;
+            padding: 15px 20px;
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745 !important;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s, transform 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #28a745 !important;
+            transform: scale(1.1);
+        }
+
+        .container {
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+        .result-container {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .loader {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #file-name {
+            font-size: 14px;
+            margin-top: 5px;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">News Credibility Analyser</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="analyze.html">Analyze News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profanity.html">Profanity Validator</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profanity Validator Section -->
+    <div class="container">
+        <h2 class="text-center">Profanity Validator</h2>
+        <p class="text-center">Enter text or upload a PDF file to check for offensive or inappropriate language.</p>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <label for="profanity-text">Enter Text:</label>
+                    <textarea id="profanity-text" class="form-control" rows="5" placeholder="Type or paste your text here..."></textarea>
+                </div>
+
+                <p class="text-center">OR</p>
+
+                <div class="form-group">
+                    <label for="file-upload">Upload a PDF File:</label>
+                    <input type="file" id="file-upload" class="form-control" accept=".pdf">
+                    <p id="file-name"></p>
+                </div>
+
+                <button id="validate-btn" class="btn btn-primary w-100">Validate Profanity</button>
+
+                <div class="loader">
+                    <i class="fas fa-spinner fa-spin fa-3x"></i>
+                    <p>Validating...</p>
+                </div>
+
+                <div id="result" class="result-container" style="display: none;">
+                    <h4>Validation Result</h4>
+                    <p id="profanity-status"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                document.getElementById('file-name').textContent = `Selected file: ${file.name}`;
+                extractTextFromPDF(file);
+            }
+        });
+
+        // Extract text from PDF
+        function extractTextFromPDF(file) {
+            const reader = new FileReader();
+            reader.onload = async function(event) {
+                const typedArray = new Uint8Array(event.target.result);
+                const pdf = await pdfjsLib.getDocument(typedArray).promise;
+                let extractedText = '';
+
+                for (let i = 1; i <= pdf.numPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const textContent = await page.getTextContent();
+                    extractedText += textContent.items.map(item => item.str).join(' ') + '\n';
+                }
+
+                document.getElementById('profanity-text').value = extractedText;
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        document.getElementById('validate-btn').addEventListener('click', async () => {
+            const text = document.getElementById('profanity-text').value;
+            const resultContainer = document.getElementById('result');
+            const loader = document.querySelector('.loader');
+
+            if (!text.trim()) {
+                alert("Please enter text or upload a PDF file.");
+                return;
+            }
+
+            resultContainer.style.display = 'none';
+            loader.style.display = 'block';
+
+            try {
+                const response = await fetch('https://your-deployed-backend-url/validate-profanity', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text })
+                });
+
+                const data = await response.json();
+                loader.style.display = 'none';
+
+                if (data.success) {
+                    document.getElementById('profanity-status').textContent = `Profanity Detected: ${data.contains_profanity ? "Yes" : "No"}`;
+                    resultContainer.style.display = 'block';
+                } else {
+                    alert("Error: " + data.message);
+                }
+            } catch (error) {
+                loader.style.display = 'none';
+                alert("Failed to validate text. Please try again.");
+            }
+        });
+    </script>
+
+</body>
+</html>
