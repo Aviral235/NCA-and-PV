@@ -20,11 +20,10 @@ app.use(express.json());
 require("dotenv").config();
 
 mongoose.connect(
-    
-    "mongodb+srv://User2:" +
+    "mongodb+srv://Hello1234:" +
     // process.env.MONGO_PASSWORD +
-    "Hello1234" +
-    "@cluster0.dupns.mongodb.net/NCnPV?retryWrites=true&w=majority&appName=Cluster0",
+    "Aviral$$22" +
+    "@cluster0.skunnu8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
     {}
 )
 .then((x) => {
