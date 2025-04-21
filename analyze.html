@@ -176,29 +176,44 @@
             
             resultContainer.style.display = 'none';
             loader.style.display = 'block';
-
+        
+            // Check that either text or URL is provided
+            if (!url && !text) {
+                alert('Please enter either a news URL or paste news content.');
+                loader.style.display = 'none';
+                return;
+            }
+        
             try {
-                const response = await fetch('https://your-deployed-backend-url/analyze', {
+                // Prepare the data to be sent to the Flask API
+                const dataToSend = {
+                    text: text ? text : "",  // If no text, send empty string
+                    url: url ? url : ""      // If no URL, send empty string
+                };
+        
+                const response = await fetch('http://127.0.0.1:5000/predict', {  // Local Flask API URL
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ url, text })
+                    body: JSON.stringify(dataToSend)
                 });
-
+        
                 const data = await response.json();
                 loader.style.display = 'none';
-
-                if (data.success) {
-                    document.getElementById('credibility-score').textContent = `Credibility Score: ${data.score}`;
-                    document.getElementById('summary').textContent = `Summary: ${data.summary}`;
+        
+                if (data.prediction) {
+                    // Display the prediction result
+                    document.getElementById('credibility-score').textContent = `Credibility Score: ${data.confidence}`;
+                    document.getElementById('summary').textContent = `Prediction: ${data.prediction}`;
                     resultContainer.style.display = 'block';
                 } else {
-                    alert("Error: " + data.message);
+                    alert("Error: " + data.error);
                 }
             } catch (error) {
                 loader.style.display = 'none';
                 alert("Failed to analyze news. Please try again.");
             }
         });
+        
     </script>
 
 </body>
