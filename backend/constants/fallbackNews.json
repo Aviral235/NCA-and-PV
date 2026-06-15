@@ -1,0 +1,362 @@
+[
+  {
+    "title": "NASA's James Webb Telescope Captures Unprecedented View of Cosmic Cliffs",
+    "url": "https://www.nasa.gov/image-article/nasas-webb-reveals-cosmic-cliffs-glittering-landscape-of-star-birth/",
+    "description": "The James Webb Space Telescope has captured a stunning, high-resolution image of the Carina Nebula, revealing previously hidden areas of star birth.",
+    "imageUrl": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "NASA Space",
+    "category": "science",
+    "publishedAt": "2026-06-15T12:00:00Z"
+  },
+  {
+    "title": "Deep Ocean Expedition Discovers 100 New Marine Species off Chile Coast",
+    "url": "https://www.nationalgeographic.com/science/article/chile-trench-ocean-expedition-new-species",
+    "description": "An oceanographic research vessel has mapped underwater mountains, revealing a biodiversity hotspot containing unknown species of corals and deep-sea fish.",
+    "imageUrl": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "NatGeo Explorers",
+    "category": "science",
+    "publishedAt": "2026-06-15T11:00:00Z"
+  },
+  {
+    "title": "Quantum Computing: Scientists Achieve Room-Temperature Superconductivity Breakthrough",
+    "url": "https://www.scientificamerican.com/article/room-temperature-superconductors-quantum-leap",
+    "description": "Physicists have demonstrated zero electrical resistance in a new synthesized material at room temperature, potentially revolutionizing power grids.",
+    "imageUrl": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "SciAm Physics",
+    "category": "science",
+    "publishedAt": "2026-06-15T10:00:00Z"
+  },
+  {
+    "title": "Archaeologists Unearth Lost Mayan City Using Advanced LiDAR Aerial Mapping",
+    "url": "https://www.history.com/news/lost-mayan-city-lidar-guatemala",
+    "description": "Hidden beneath dense jungle canopy, the ruins of a massive ancient city with pyramid structures and highways have been mapped in Northern Guatemala.",
+    "imageUrl": "https://images.unsplash.com/photo-1518638150341-db700a400ef4?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "History Channel",
+    "category": "science",
+    "publishedAt": "2026-06-15T09:00:00Z"
+  },
+  {
+    "title": "Mars Rover Finds Compelling Evidence of Ancient Liquid Water Flow in Crater",
+    "url": "https://www.nasa.gov/news/mars-rover-ancient-lake-water-evidence",
+    "description": "Sediment cores analyzed by the rover reveal clay deposits and ripple marks that confirm a lake once filled the crater for millions of years.",
+    "imageUrl": "https://images.unsplash.com/photo-1612892483236-42d68a57623d?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "NASA JPL",
+    "category": "science",
+    "publishedAt": "2026-06-15T08:00:00Z"
+  },
+  {
+    "title": "CRISPR Gene Editing Cures Genetic Blindness in Clinical Trial Milestone",
+    "url": "https://www.nature.com/articles/crispr-gene-editing-blindness-trial-cure",
+    "description": "In a historic medical breakthrough, patients with hereditary blindness had their vision restored following a single localized CRISPR injection.",
+    "imageUrl": "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Nature Biotech",
+    "category": "science",
+    "publishedAt": "2026-06-15T07:00:00Z"
+  },
+  {
+    "title": "Astronomers Detect Strongest Ever Fast Radio Burst from Distant Galaxy",
+    "url": "https://www.astronomy.com/news/fast-radio-burst-deep-space-signal",
+    "description": "A millisecond-long pulse of radio waves has been traced to a magnetar located eight billion light-years away, releasing solar equivalent energy in milliseconds.",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Cosmic Signals",
+    "category": "science",
+    "publishedAt": "2026-06-15T06:00:00Z"
+  },
+  {
+    "title": "Fusion Reactor Sustains Record Energy Output in Clean Power Breakthrough",
+    "url": "https://www.scientificamerican.com/article/fusion-energy-reactor-record-sustained",
+    "description": "European researchers maintained nuclear fusion reactions at high temperatures for five minutes, producing net positive power output for clean energy grids.",
+    "imageUrl": "https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "SciAm Energy",
+    "category": "science",
+    "publishedAt": "2026-06-15T05:00:00Z"
+  },
+  {
+    "title": "Global Markets Rally as Tech Sector Leads Explosive Economic Growth",
+    "url": "https://www.bloomberg.com/news/global-stock-market-rally-earnings-tech",
+    "description": "Stock indexes soared today as major tech companies reported record earnings, driving optimism for sustained economic development.",
+    "imageUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Bloomberg Finance",
+    "category": "business",
+    "publishedAt": "2026-06-15T12:00:00Z"
+  },
+  {
+    "title": "Federal Reserve Holds Interest Rates Steady, Citing Stabilized Inflation Targets",
+    "url": "https://www.wsj.com/economy/fed-interest-rates-meeting-inflation-steady",
+    "description": "The central bank decided to maintain the benchmark lending rate, expressing confidence in the current economic trajectory and stable labor reports.",
+    "imageUrl": "https://images.unsplash.com/photo-1502920514313-52581002a659?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Wall Street Journal",
+    "category": "business",
+    "publishedAt": "2026-06-15T11:00:00Z"
+  },
+  {
+    "title": "Tech Giant Unveils $10 Billion Investment in Next-Gen Microchip Plants",
+    "url": "https://www.reuters.com/business/technology-semiconductor-chip-plant-investment",
+    "description": "Plans have been announced to build two state-of-the-art semiconductor fabrication facilities to secure hardware supply chains and boost job growth.",
+    "imageUrl": "https://images.unsplash.com/photo-1591453089816-0fbb971b454c?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Reuters Business",
+    "category": "business",
+    "publishedAt": "2026-06-15T10:00:00Z"
+  },
+  {
+    "title": "Oil Prices Stabilize After Strategic Reserves Release by Major Nations",
+    "url": "https://www.bloomberg.com/energy/oil-prices-strategic-petroleum-reserve-release",
+    "description": "Crude futures trading leveled off following coordinated releases from petroleum reserves designed to buffer geopolitical supply disruptions.",
+    "imageUrl": "https://images.unsplash.com/photo-1535732820275-9ffd998cac22?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Bloomberg Oil",
+    "category": "business",
+    "publishedAt": "2026-06-15T09:00:00Z"
+  },
+  {
+    "title": "Startup Disruption: Electric Cargo Planes Receive FAA Certification",
+    "url": "https://www.techcrunch.com/business/electric-aviation-cargo-planes-certified",
+    "description": "A pioneering electric aviation startup has secured safety certification for its autonomous short-haul logistics planes, transforming domestic shipping.",
+    "imageUrl": "https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "TechCrunch Logistics",
+    "category": "business",
+    "publishedAt": "2026-06-15T08:00:00Z"
+  },
+  {
+    "title": "Real Estate Trends: Commercial Property Valuations Drop as Remote Work Stays",
+    "url": "https://www.wsj.com/realestate/commercial-office-space-valuation-declines",
+    "description": "Urban office space valuations have continued to decline as corporations downsize long-term leases, pushing developers to repurpose properties.",
+    "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "WSJ Property",
+    "category": "business",
+    "publishedAt": "2026-06-15T07:00:00Z"
+  },
+  {
+    "title": "E-Commerce Giants Face Anticompetitive Pricing Inquiries in Europe",
+    "url": "https://www.reuters.com/business/retail-ecommerce-antitrust-pricing-investigation",
+    "description": "Regulators have opened formal antitrust investigations into search ranking manipulation and merchant exclusivity deals on global platforms.",
+    "imageUrl": "https://images.unsplash.com/photo-1472851294608-062f824d296e?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Reuters Retail",
+    "category": "business",
+    "publishedAt": "2026-06-15T06:00:00Z"
+  },
+  {
+    "title": "Renewable Energy Stocks Surge Amid Global Green Subsidy Expansions",
+    "url": "https://www.bloomberg.com/markets/renewable-energy-stocks-solar-wind-tax-credits",
+    "description": "Shares in clean energy manufacturers rose significantly after several nations expanded tax credits and infrastructure loans for solar panel installations.",
+    "imageUrl": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Bloomberg Green",
+    "category": "business",
+    "publishedAt": "2026-06-15T05:00:00Z"
+  },
+  {
+    "title": "AI Breakthrough: Researchers Train Neural Networks to Speak Fluent Animal Dialects",
+    "url": "https://www.techcrunch.com/artificial-intelligence/ai-model-marine-mammal-communication",
+    "description": "In a groundbreaking new study, scientists have utilized advanced generative models to decode and mimic communication patterns in marine mammals.",
+    "imageUrl": "https://images.unsplash.com/photo-1484406566174-9da000fda645?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "TechCrunch AI",
+    "category": "technology",
+    "publishedAt": "2026-06-15T12:00:00Z"
+  },
+  {
+    "title": "Electric Vehicle Battery Charges to 80% in Under 5 Minutes in Lab Tests",
+    "url": "https://www.techcrunch.com/hardware/silicon-ev-battery-charging-speed-milestone",
+    "description": "Engineers have developed a silicon-dominant anode chemistry that supports ultra-fast charging without cell degradation, removing range anxieties.",
+    "imageUrl": "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "TechCrunch Hardware",
+    "category": "technology",
+    "publishedAt": "2026-06-15T11:00:00Z"
+  },
+  {
+    "title": "Cybersecurity Alert: Major Zero-Day Vulnerability Patched in Global Mobile Browsers",
+    "url": "https://www.wired.com/security/browser-zero-day-exploit-patched-emergency",
+    "description": "Tech giants have released emergency security patches to remediate an active exploit allowing remote code execution via normal web viewing.",
+    "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Wired Security",
+    "category": "technology",
+    "publishedAt": "2026-06-15T10:00:00Z"
+  },
+  {
+    "title": "Generative AI Reaches Milestone in Predicting Complex Protein Structures",
+    "url": "https://www.wired.com/science/biotech-protein-structure-artificial-intelligence",
+    "description": "Deep learning models have accurately mapped millions of proteins, dramatically accelerating drug development timelines and biochemical studies.",
+    "imageUrl": "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Wired Science",
+    "category": "technology",
+    "publishedAt": "2026-06-15T09:00:00Z"
+  },
+  {
+    "title": "Next-Gen Solid State Batteries Enter Commercial Road Testing Phase",
+    "url": "https://www.wired.com/transportation/solid-state-battery-electric-vehicle-test-drive",
+    "description": "automotive manufacturers have started track testing vehicles equipped with solid-state packs, promising double the range of traditional lithium batteries.",
+    "imageUrl": "https://images.unsplash.com/photo-1558441719-ff34b0524a24?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Wired Auto",
+    "category": "technology",
+    "publishedAt": "2026-06-15T08:00:00Z"
+  },
+  {
+    "title": "Leading Cloud Provider Outlines Roadmap for Next-Gen Clean Data Centers",
+    "url": "https://www.techcrunch.com/cloud/data-centers-geothermal-energy-sustainability",
+    "description": "Plans have been unveiled to power hyperscale computing grids using deep geothermal plants, resolving high carbon footprints of massive AI training servers.",
+    "imageUrl": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "TechCrunch Cloud",
+    "category": "technology",
+    "publishedAt": "2026-06-15T07:00:00Z"
+  },
+  {
+    "title": "Global Consortia Finalizes Security Standards for Post-Quantum Encryption",
+    "url": "https://www.wired.com/security/post-quantum-cryptography-encryption-standards",
+    "description": "Cryptographers have standardized new mathematical algorithms resilient to quantum computing decryptions, prompting updates across banking servers.",
+    "imageUrl": "https://images.unsplash.com/photo-1601597111158-2fceff297c0c?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Wired Security",
+    "category": "technology",
+    "publishedAt": "2026-06-15T06:00:00Z"
+  },
+  {
+    "title": "Tech Regulators Impose Strict Guidelines on Autonomous Drone Fleets",
+    "url": "https://www.techcrunch.com/drones/autonomous-delivery-aviation-guidelines",
+    "description": "New rules mandate geofenced corridors and automated collision avoidance hardware for commercial drone fleets executing suburban package deliveries.",
+    "imageUrl": "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "TechCrunch Drones",
+    "category": "technology",
+    "publishedAt": "2026-06-15T05:00:00Z"
+  },
+  {
+    "title": "Global Summit Reaches Historic Agreement to Protect High Seas Biodiversity",
+    "url": "https://www.bbc.com/news/world-un-high-seas-biodiversity-treaty",
+    "description": "Delegates from over 190 nations have signed a treaty establishing marine protected areas in international waters, restricting commercial exploitation.",
+    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "BBC News",
+    "category": "world",
+    "publishedAt": "2026-06-15T12:00:00Z"
+  },
+  {
+    "title": "Coordinated Humanitarian Aid Corridor Opens in Earthquake Zone",
+    "url": "https://www.theguardian.com/world/earthquake-humanitarian-aid-corridor-relief",
+    "description": "A cross-border delivery route has been secured by international peacekeepers, allowing trucks containing medicine, food, and shelter to reach victims.",
+    "imageUrl": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "The Guardian",
+    "category": "world",
+    "publishedAt": "2026-06-15T11:00:00Z"
+  },
+  {
+    "title": "Historic Rainfall Triggers Temporary Evacuations in Coastal Metropolises",
+    "url": "https://www.bbc.com/news/world-coastal-flooding-evacuation-monsoon",
+    "description": "Monsoon rains shattered previous decadal records, flooding subways and lower apartments, forcing city workers to assist thousands in temporary shelters.",
+    "imageUrl": "https://images.unsplash.com/photo-1516912403163-b248a3bf2a36?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "BBC World",
+    "category": "world",
+    "publishedAt": "2026-06-15T10:00:00Z"
+  },
+  {
+    "title": "Global Wildlife Populations Stabilize in Targeted Conservation Reserves",
+    "url": "https://www.theguardian.com/environment/wildlife-population-recovery-nature-reserves",
+    "description": "Biologists report steady birth rates for endangered species in protected areas, highlighting the success of anti-poaching and forest replanting policies.",
+    "imageUrl": "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Guardian Eco",
+    "category": "world",
+    "publishedAt": "2026-06-15T09:00:00Z"
+  },
+  {
+    "title": "International Flight Routes Resume After Volcanic Ash Cloud Clears",
+    "url": "https://www.bbc.com/news/aviation-routes-resume-volcano-ash-cleared",
+    "description": "Aviation regulators cleared international carriers to resume passenger flights across Iceland after atmospheric samples showed ash density fell below limits.",
+    "imageUrl": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "BBC Aviation",
+    "category": "world",
+    "publishedAt": "2026-06-15T08:00:00Z"
+  },
+  {
+    "title": "Historic Trade Agreement Signed to Boost Indo-Pacific Maritime Transit",
+    "url": "https://www.reuters.com/world/indo-pacific-maritime-transit-trade-deal",
+    "description": "Thirteen countries signed a tariff relaxation pact targeting shipping hubs, aiming to speed up ocean logistics clearances and reduce customs paperwork.",
+    "imageUrl": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Reuters World",
+    "category": "world",
+    "publishedAt": "2026-06-15T07:00:00Z"
+  },
+  {
+    "title": "Global Health Agency Announces Standardized Protocol for Viral Outbreaks",
+    "url": "https://www.nytimes.com/world/health-agency-viral-outbreak-response-framework",
+    "description": "A unified guidelines framework has been issued to synchronize tracking metrics, hospital quarantine rules, and vaccine sharing schedules among states.",
+    "imageUrl": "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "NYT World",
+    "category": "world",
+    "publishedAt": "2026-06-15T06:00:00Z"
+  },
+  {
+    "title": "Archaeologists Excavate Lost Port City Submerged in Mediterranean",
+    "url": "https://www.theguardian.com/science/archaeology-submerged-lost-port-city-excavation",
+    "description": "Using advanced sonar and scuba mapping, researchers recovered bronze statues and coins confirming the location of a pre-Roman trading post.",
+    "imageUrl": "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Guardian History",
+    "category": "world",
+    "publishedAt": "2026-06-15T05:00:00Z"
+  },
+  {
+    "title": "Senate Passes Bi-Partisan Environmental Infrastructure Spending Bill",
+    "url": "https://www.nytimes.com/politics/senate-passes-environmental-spending-bill",
+    "description": "A sweeping budget allocation securing $80 billion for electric grid modernization and waterway cleanup passed in a rare bipartisan senate coalition vote.",
+    "imageUrl": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "NYT Politics",
+    "category": "politics",
+    "publishedAt": "2026-06-15T12:00:00Z"
+  },
+  {
+    "title": "Global Coalition Pledges Tight Enforcement of Offshore Bank Disclosures",
+    "url": "https://www.nytimes.com/world/offshore-tax-avoidance-banking-transparency-pledge",
+    "description": "Financial ministers from 30 nations pledged to close loopholes allowing multinational corporations to register shell assets in foreign tax havens.",
+    "imageUrl": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "NYT Global",
+    "category": "politics",
+    "publishedAt": "2026-06-15T11:00:00Z"
+  },
+  {
+    "title": "Elections Update: High Turnouts Reported in Key Regional Governorship Contests",
+    "url": "https://www.bbc.com/news/politics-regional-elections-governor-voter-turnout",
+    "description": "Voters stood in long queues as polling places reported record numbers for local legislative elections, heavily driven by school budget referendums.",
+    "imageUrl": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "BBC Politics",
+    "category": "politics",
+    "publishedAt": "2026-06-15T10:00:00Z"
+  },
+  {
+    "title": "New Border Regulation Signed to Assist Seasonal Agricultural Workers",
+    "url": "https://www.reuters.com/world/seasonal-agricultural-worker-visa-reform-signed",
+    "description": "A visa expansion decree was signed to streamline security background checks, allowing regional farms to import labor rapidly during harvest cycles.",
+    "imageUrl": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Reuters Politics",
+    "category": "politics",
+    "publishedAt": "2026-06-15T09:00:00Z"
+  },
+  {
+    "title": "Congressional Hearings Convene to Review Social Platform Safety Algorithms",
+    "url": "https://www.nytimes.com/politics/congressional-hearings-social-algorithms-addiction",
+    "description": "Tech executives faced questions from senate committees investigating the mental health impacts of automated recommendation feeds on teenagers.",
+    "imageUrl": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "NYT TechPolitics",
+    "category": "politics",
+    "publishedAt": "2026-06-15T08:00:00Z"
+  },
+  {
+    "title": "Supreme Court Upholds Environmental Agency Water Filtration Standards",
+    "url": "https://www.reuters.com/legal/supreme-court-epa-water-runoff-standards-ruling",
+    "description": "The high court ruled in favor of regulatory agency jurisdiction, validating local limits on industrial chemical discharges in city water reservoirs.",
+    "imageUrl": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Reuters Legal",
+    "category": "politics",
+    "publishedAt": "2026-06-15T07:00:00Z"
+  },
+  {
+    "title": "City Council Passes Historic Zoning Reform to Support Affordable Housing",
+    "url": "https://www.theguardian.com/politics/city-council-zoning-reform-affordable-housing",
+    "description": "New rules allow multi-family apartment constructions in areas previously restricted to single family homes, aiming to lower city rent costs.",
+    "imageUrl": "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "Guardian Local",
+    "category": "politics",
+    "publishedAt": "2026-06-15T06:00:00Z"
+  },
+  {
+    "title": "National Cabinet Approves Cybersecurity Subsidies for Rural Hospitals",
+    "url": "https://www.bbc.com/news/politics-cybersecurity-grants-rural-hospitals",
+    "description": "Ministers approved a $200 million grants program to help underfunded clinics deploy advanced threat detection firewalls against ransomware attacks.",
+    "imageUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
+    "sourceName": "BBC Admin",
+    "category": "politics",
+    "publishedAt": "2026-06-15T05:00:00Z"
+  }
+]
